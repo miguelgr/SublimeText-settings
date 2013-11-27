@@ -1,0 +1,101 @@
+/*
+Created by: Miguel Garcia <miguel.garciarod@gmail.com>
+Date: 2013
+Github: miguelgr
+
+These keybindings are personalized in order to optimize the working time avoiding
+using the mouse
+
+
+They work with the following packages:
+
+    - Emment
+    - Mark and Move
+    - Plain Tasks
+*/
+
+
+[
+// Sublime Controls Extends default
+    { "keys": ["super+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["ctrl+s"], "command": "toggle_side_bar" },
+    { "keys": ["super+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["super+shift+w"], "command": "close_all" },
+    { "keys": ["alt+shift+,"], "command": "move_to", "args": {"to": "bof", "extend": false}},
+    { "keys": ["alt+shift+."], "command": "move_to", "args": {"to": "eof", "extend": false}},
+    { "keys": ["ctrl+i"], "command": "show_at_center" },
+
+
+    //Search
+    { "keys": ["ctrl+alt+f"], "command": "side_bar_find_files_path_containing" },
+// Editing
+    { "keys": ["super+]"], "command": "indent" },
+    { "keys": ["super+["], "command": "unindent" },
+    { "keys": ["ctrl+j"], "command": "join_lines" },
+    { "keys": ["super+k", "super+u"], "command": "upper_case" },
+    { "keys": ["super+k", "super+l"], "command": "lower_case" },
+    { "keys": ["super+,"], "command": "open_file", "args": {"file": "${packages}/User/Preferences.sublime-settings"} },
+    { "keys": ["super+."], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} },
+    {"keys": ["super+shift+forward_slash"], "args": {"action": "toggle_comment"}, "command": "run_emmet_action", "context": [{"operand": "source.css - source.css.less, text.xml, text.html - source", "operator": "equal", "match_all": true, "key": "selector"}, {"match_all": true, "key": "emmet_action_enabled.toggle_comment"} ] },
+    // Selection
+
+    { "keys": ["alt+shift+p"], "command": "select_lines", "args": {"forward": false} },
+    { "keys": ["alt+shift+n"], "command": "select_lines", "args": {"forward": true} },
+    { "keys": ["super+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
+    { "keys": ["super+shift+j"], "command": "expand_selection", "args": {"to": "indentation"} },
+    { "keys": ["super+shift+a"], "command": "expand_selection", "args": {"to": "tag"} },
+    { "keys": ["super+l"], "command": "expand_selection", "args": {"to": "line"} },
+    // Find
+    { "keys": ["super+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse":false} },
+    { "keys": ["super+shift+i"], "command": "show_panel", "args": {"panel": "incremental_find", "reverse":true} },
+    { "keys": ["super+f"], "command": "show_panel", "args": {"panel": "find"} },
+    { "keys": ["super+alt+f"], "command": "show_panel", "args": {"panel": "replace"} },
+    { "keys": ["super+alt+e"], "command": "replace_next" },
+    { "keys": ["super+g"], "command": "find_next" },
+    { "keys": ["super+shift+g"], "command": "find_prev" },
+
+    { "keys": ["super+d"], "command": "find_under_expand" },
+    { "keys": ["super+k", "super+d"], "command": "find_under_expand_skip" },
+    { "keys": ["super+alt+."], "command": "close_tag" },
+    { "keys": ["ctrl+q"], "command": "toggle_recordd_macro" },
+    { "keys": ["ctrl+shift+q"], "command": "run_macro" },
+    { "keys": ["tab"], "command": "indent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" } ] },
+    { "keys": ["tab"], "command": "next_field", "context": [{ "key": "has_next_field", "operator": "equal", "operand": true } ] },
+// Emment
+    {"keys": ["shift+super+,"], "args": {"action": "select_previous_item"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.select_previous_item"} ] },
+    { "keys": ["ctrl+shift+p"], "command": "", "args": {"forward": false} },
+    { "keys": ["ctrl+shift+n"], "command": "", "args": {"forward": true} },
+
+
+// Terminal keybindings
+    { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+    { "keys": ["super+alt+["], "command": "fold" },
+    { "keys": ["super+alt+]"], "command": "unfold" },
+    { "keys": ["alt+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
+    { "keys": ["alt+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    { "keys": ["ctrl+d"], "command": "right_delete"},
+    { "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
+    { "keys": ["alt+d"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
+    { "keys": ["alt+t"], "command": "transpose" },
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+    { "keys": ["ctrl+u"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} },
+    { "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
+
+ //Marks
+    { "keys": ["ctrl+shift+tab"], "command": "mark_and_move_window_select" },
+    { "keys": ["ctrl+m"], "command": "mark_and_move_do_it_all" },
+    { "keys": ["alt+m"], "command": "mark_and_move_next" },
+    { "keys": ["alt+shift+m"], "command": "mark_and_move_prev" },
+    { "keys": ["ctrl+shift+m"], "command": "mark_and_move_recall" },
+    { "keys": ["ctrl+alt+m"], "command": "mark_and_move_clear" },
+// Plain Tasks
+    { "keys": ["super+f"], "command": "plain_tasks_complete","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["super+m"], "command": "plain_tasks_cancel", "context": [{"key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["super+enter"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["super+i"], "command": "plain_tasks_new","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["super+shift+a"], "command": "plain_tasks_archive","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] },
+    { "keys": ["super+shift+u"], "command": "plain_tasks_open_url","context": [{ "key": "selector", "operator": "equal", "operand": "text.todo" }] }
+
+]
+
