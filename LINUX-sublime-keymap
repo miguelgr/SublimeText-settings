@@ -1,0 +1,31 @@
+[
+   { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
+    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
+	{ "keys": ["ctrl+shift+w"], "command": "close" },
+    { "keys": ["alt+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
+    { "keys": ["alt+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
+    { "keys": ["ctrl+d"], "command": "right_delete"},
+    { "keys": ["ctrl+p"], "command": "move", "args": {"by": "lines", "forward": false, "extend": false} },
+    { "keys": ["ctrl+n"], "command": "move", "args": {"by": "lines", "forward": true, "extend": false} },
+    { "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
+    { "keys": ["alt+d"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
+    { "keys": ["alt+e"], "command": "move", "args": {"by": "wholelines", "forward": true, "extend": false} },
+    { "keys": ["alt+a"], "command": "move", "args": {"by": "wholelines", "forward": false, "extend": false} },
+    { "keys": ["ctrl+b"], "command": "move", "args": {"by": "characters", "forward": false }},
+    { "keys": ["ctrl+f"], "command": "move", "args": {"by": "characters", "forward": true }},
+    { "keys": ["ctrl+b"], "command": "move", "args": {"by": "character", "forward": false, "extend": false} },
+    { "keys": ["alt+shift+,"], "command": "move_to", "args": {"to": "bof", "extend": false}},
+    { "keys": ["alt+shift+."], "command": "move_to", "args": {"to": "eof", "extend": false}},
+    { "keys": ["ctrl+i"], "command": "show_at_center" },
+    // { "keys": ["alt+k,/[0-9]+/,w"], "command": "move", "args": {"by": "character", "forward": false, "extend": false} },
+   
+    { "keys": ["alt+u"], "command": "upper_case" },
+    { "keys": ["alt+l"], "command": "lower_case" },
+    { "keys": ["alt+t"], "command": "transpose" },
+    { "keys": ["alt+]"], "command": "indent" },
+    { "keys": ["alt+["], "command": "unindent" },
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
+    { "keys": ["ctrl+u"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} }
+    // { "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} }
+
+]
