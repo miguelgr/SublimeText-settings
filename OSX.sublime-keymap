@@ -3,8 +3,11 @@ Created by: Miguel Garcia <miguel.garciarod@gmail.com>
 Date: 2013
 Github: miguelgr
 
-These keybindings are personalized in order to optimize the working time avoiding
-using the mouse
+You are free to use, modify and improve this keymap.
+
+They keybindings described here are personalized but might be a reference for you to customize your owns.
+
+Inspired in Emacs and GNU/Linux Terminal.
 
 
 They work with the following packages:
@@ -16,29 +19,47 @@ They work with the following packages:
 
 
 [
+
 // Sublime Controls Extends default
-    { "keys": ["super+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
-    { "keys": ["ctrl+s"], "command": "toggle_side_bar" },
-    { "keys": ["super+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
-    { "keys": ["super+shift+w"], "command": "close_all" },
+    { "keys": ["super+,"], "command": "open_file", "args": {"file": "${packages}/User/Preferences.sublime-settings"} }, // User Settings
+    { "keys": ["super+."], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} }, // User Keybindings
+    { "keys": ["super+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} }, // Palette
+    { "keys": ["ctrl+s"], "command": "toggle_side_bar" }, // Toggle SideBar
+    { "keys": ["super+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} }, // GOTO
+    { "keys": ["super+shift+w"], "command": "close_all" }, // Close ALL
     { "keys": ["alt+shift+,"], "command": "move_to", "args": {"to": "bof", "extend": false}},
     { "keys": ["alt+shift+."], "command": "move_to", "args": {"to": "eof", "extend": false}},
-    { "keys": ["ctrl+i"], "command": "show_at_center" },
 
-
-    //Search
+//Search
     { "keys": ["ctrl+alt+f"], "command": "side_bar_find_files_path_containing" },
-// Editing
-    { "keys": ["super+]"], "command": "indent" },
-    { "keys": ["super+["], "command": "unindent" },
-    { "keys": ["ctrl+j"], "command": "join_lines" },
-    { "keys": ["super+k", "super+u"], "command": "upper_case" },
-    { "keys": ["super+k", "super+l"], "command": "lower_case" },
-    { "keys": ["super+,"], "command": "open_file", "args": {"file": "${packages}/User/Preferences.sublime-settings"} },
-    { "keys": ["super+."], "command": "open_file", "args": {"file": "${packages}/User/Default (OSX).sublime-keymap"} },
-    {"keys": ["super+shift+forward_slash"], "args": {"action": "toggle_comment"}, "command": "run_emmet_action", "context": [{"operand": "source.css - source.css.less, text.xml, text.html - source", "operator": "equal", "match_all": true, "key": "selector"}, {"match_all": true, "key": "emmet_action_enabled.toggle_comment"} ] },
-    // Selection
 
+
+// Terminal keybindings
+    { "keys": ["ctrl+i"], "command": "show_at_center" }, // Center line
+    { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} }, //beggining of line
+    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} }, // end of line
+    { "keys": ["alt+b"], "command": "move", "args": {"by": "subwords", "forward": false} }, // Backwards (word)
+    { "keys": ["alt+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} }, // Forwards (word)
+    { "keys": ["alt+e"], "command": "move", "args": {"by": "wholelines", "forward": true, "extend": false} }, // End of next line (selecting text)
+    { "keys": ["alt+a"], "command": "move", "args": {"by": "wholelines", "forward": false, "extend": false} }, // End of previous line (selecting text)
+    { "keys": ["alt+t"], "command": "transpose" },
+    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} }, // Kill from cursor to EOL
+    { "keys": ["ctrl+u"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} }, // Kill from cursor to BOL
+    { "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} }, // Delete line (clear)
+    { "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false, "sub_words": false } }, // Delete Backward
+    { "keys": ["alt+d"], "command": "delete_word", "args": { "forward": true, "sub_words": true } }, // Delete forward
+    { "keys": ["ctrl+d"], "command": "right_delete"}, // Delete == Supr
+
+// Editing
+    { "keys": ["super+alt+["], "command": "fold" }, // fold
+    { "keys": ["super+alt+]"], "command": "unfold" }, // unfold
+    { "keys": ["super+]"], "command": "indent" }, // indent
+    { "keys": ["super+["], "command": "unindent" }, // unindent
+    { "keys": ["ctrl+j"], "command": "join_lines" }, // join
+    { "keys": ["super+k", "super+u"], "command": "upper_case" }, // upercase 
+    { "keys": ["super+k", "super+l"], "command": "lower_case" }, // lowercase
+
+// Selection
     { "keys": ["alt+shift+p"], "command": "select_lines", "args": {"forward": false} },
     { "keys": ["alt+shift+n"], "command": "select_lines", "args": {"forward": true} },
     { "keys": ["super+shift+space"], "command": "expand_selection", "args": {"to": "scope"} },
@@ -61,28 +82,15 @@ They work with the following packages:
     { "keys": ["ctrl+shift+q"], "command": "run_macro" },
     { "keys": ["tab"], "command": "indent", "context": [{ "key": "text", "operator": "regex_contains", "operand": "\n" } ] },
     { "keys": ["tab"], "command": "next_field", "context": [{ "key": "has_next_field", "operator": "equal", "operand": true } ] },
+
 // Emment
     {"keys": ["shift+super+,"], "args": {"action": "select_previous_item"}, "command": "run_emmet_action", "context": [{"key": "emmet_action_enabled.select_previous_item"} ] },
     { "keys": ["ctrl+shift+p"], "command": "", "args": {"forward": false} },
     { "keys": ["ctrl+shift+n"], "command": "", "args": {"forward": true} },
+    {"keys": ["super+shift+forward_slash"], "args": {"action": "toggle_comment"}, "command": "run_emmet_action", "context": [{"operand": "source.css - source.css.less, text.xml, text.html - source", "operator": "equal", "match_all": true, "key": "selector"}, {"match_all": true, "key": "emmet_action_enabled.toggle_comment"} ] },
 
 
-// Terminal keybindings
-    { "keys": ["ctrl+a"], "command": "move_to", "args": {"to": "bol", "extend": false} },
-    { "keys": ["ctrl+e"], "command": "move_to", "args": {"to": "eol", "extend": false} },
-    { "keys": ["super+alt+["], "command": "fold" },
-    { "keys": ["super+alt+]"], "command": "unfold" },
-    { "keys": ["alt+b"], "command": "move", "args": {"by": "subwords", "forward": false} },
-    { "keys": ["alt+f"], "command": "move", "args": {"by": "subword_ends", "forward": true} },
-    { "keys": ["ctrl+d"], "command": "right_delete"},
-    { "keys": ["ctrl+w"], "command": "delete_word", "args": { "forward": false, "sub_words": false } },
-    { "keys": ["alt+d"], "command": "delete_word", "args": { "forward": true, "sub_words": true } },
-    { "keys": ["alt+t"], "command": "transpose" },
-    { "keys": ["ctrl+k"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard EOL.sublime-macro"} },
-    { "keys": ["ctrl+u"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete to Hard BOL.sublime-macro"} },
-    { "keys": ["ctrl+l"], "command": "run_macro_file", "args": {"file": "Packages/Default/Delete Line.sublime-macro"} },
-
- //Marks
+ //Mark and move 
     { "keys": ["ctrl+shift+tab"], "command": "mark_and_move_window_select" },
     { "keys": ["ctrl+m"], "command": "mark_and_move_do_it_all" },
     { "keys": ["alt+m"], "command": "mark_and_move_next" },
