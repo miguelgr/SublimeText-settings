@@ -43,6 +43,9 @@ Inspired in Emacs and GNU/Linux Terminal
     { "keys": ["alt+shift+z"], "command": "redo" },
     { "keys": ["alt+y"], "command": "soft_undo" },
     // { "keys": ["alt+k,/[0-9]+/,w"], "command": "move", "args": {"by": "character", "forward": false, "extend": false} },
+    { "keys": ["ctrl+x"], "command": "cut" },
+    { "keys": ["ctrl+c"], "command": "copy" },
+    { "keys": ["ctrl+v"], "command": "paste" },
 
 // Transform
     { "keys": ["alt+u"], "command": "upper_case" },
@@ -57,6 +60,9 @@ Inspired in Emacs and GNU/Linux Terminal
 // GOTO and Command Palette
     { "keys": ["alt+p"], "command": "show_overlay", "args": {"overlay": "goto", "show_files": true} },
     { "keys": ["alt+shift+p"], "command": "show_overlay", "args": {"overlay": "command_palette"} },
+    { "keys": ["ctrl+r"], "command": "show_overlay", "args": {"overlay": "goto", "text": "@"} },
+    { "keys": ["ctrl+g"], "command": "show_overlay", "args": {"overlay": "goto", "text": ":"} },
+    { "keys": ["ctrl+;"], "command": "show_overlay", "args": {"overlay": "goto", "text": "#"} },
 
 // Find and Replace
     { "keys": ["ctrl+alt+f"], "command": "show_panel", "args": {"panel": "find"} },
@@ -78,6 +84,9 @@ Inspired in Emacs and GNU/Linux Terminal
     { "keys": ["alt+g"], "command": "find_under_expand", "context":
         [{ "key": "selection_empty", "operator": "equal", "operand": false, "match_all": true } ]
     },
+    { "keys": ["ctrl+shift+l"], "command": "split_selection_into_lines" },
+    { "keys": ["ctrl+k", "ctrl+space"], "command": "set_mark" },
+
 
 
 // FOLDING
@@ -98,5 +107,12 @@ Inspired in Emacs and GNU/Linux Terminal
 
 // Sublime
     { "keys": ["ctrl+s"], "command": "save" },
-    { "keys": ["ctrl+shift+w"], "command": "close" }
+    { "keys": ["ctrl+shift+w"], "command": "close" },
+    { "keys": ["ctrl+alt+w"], "command": "close_all" },
+    { "keys": ["ctrl+/"], "command": "toggle_comment", "args": { "block": false } },
+    { "keys": ["ctrl+shift+/"], "command": "toggle_comment", "args": { "block": true } },
+    { "keys": ["ctrl+k", "ctrl+b"], "command": "toggle_side_bar" }
+
+
+
 ]
