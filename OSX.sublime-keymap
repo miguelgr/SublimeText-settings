@@ -149,6 +149,14 @@ They work with the following packages:
     { "keys": ["ctrl+alt+m"], "command": "clear_bookmarks" },
     { "keys": ["alt+m"], "command": "select_all_bookmarks" },
 
+// Marks
+    { "keys": ["super+k", "super+u"], "command": "upper_case" },
+    { "keys": ["super+k", "super+l"], "command": "lower_case" },
+    { "keys": ["super+k", "super+m"], "command": "set_mark" },
+    { "keys": ["super+k", "super+a"], "command": "select_to_mark" },
+    { "keys": ["super+k", "super+w"], "command": "delete_to_mark" },
+    { "keys": ["super+k", "super+x"], "command": "swap_with_mark" },
+    { "keys": ["super+k", "super+c"], "command": "clear_bookmarks", "args": {"name": "mark"} },
 
 
 // Emment (Package)
